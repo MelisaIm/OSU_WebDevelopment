@@ -1,0 +1,60 @@
+/* Extra credit: make non-header rows alternate colors */
+
+/* Table styling */
+caption {
+	font-style: bold;
+	font-size: 20px;
+}
+
+td {
+	text-align: center;
+}
+
+td:first-child { 
+	font-style: italic;
+}
+
+tr:nth-child(even) {
+	background: #CCC;
+}
+
+tr:nth-child(odd) {
+	background: #D5F5E3;
+}
+
+th, td {
+	border: 1px solid black;
+}
+
+thead tr th {
+	background: white;
+}
+
+tfoot td {
+	font-style: unset;
+	background: white;
+}
+
+/* Div styling */
+.outer-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	width: 75%;
+	height: 50px;
+	background-color: pink;
+}
+
+.inner-content {
+	text-align: center;
+	width: 75%;
+	height: 20px;
+	background-color: lightblue;
+}
+
+/* Form styling */
+form {
+	margin: auto;
+	width: 35%;
+}
