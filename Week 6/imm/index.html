@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<title>Weathe API</title>
+	<link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+	<form>
+		<fieldset>
+		  <legend>GET Map API</legend>
+		  <label for="cityzip">City or Zip Code</label>
+		  <input type="text" name="city" id="cityzip">
+		  <label for="country">Country Code</label>
+		  <input type="text" name="country" id="country">
+		  <input type="submit" id="getSubmit">
+		</fieldset>
+	</form>
+	<div id="getResults" class="formResults">
+		GET request results: 
+		<div id="cityName"></div>
+		<div id="temp"></div>
+		<div id="conditions"></div>
+	</div>
+	<form>
+		<fieldset>
+			<legend>POST Request</legend>
+			<label for="Submission Data">Submission</label>
+			<input type="text" name="data" id="data">
+			<input type="submit" id="dataSubmit">
+		</fieldset>
+		</form>	
+	<div id="postResults" class="formResults">
+		POST request results: 
+		<div id="postResponse"></div>
+	</div>
+	<script src="script.js"></script>
+  </body>
+</html>

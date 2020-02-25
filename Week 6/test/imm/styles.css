@@ -1,0 +1,13 @@
+.formResults {
+	margin: 20px 0;
+	border: 2px black solid;
+	padding: 10px;
+}
+
+#cityName {
+	margin-top: 10px;
+}
+
+#postResponse {
+	margin-top: 10px;
+}
