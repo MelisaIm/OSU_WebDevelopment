@@ -1,0 +1,19 @@
+{
+  "name": "assignment-5",
+  "version": "1.0.0",
+  "description": "Assignment 5",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Melisa Im",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.2",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.11.3",
+    "handlebars": "^4.7.3",
+    "mysql": "^2.8.0"
+  }
+}
