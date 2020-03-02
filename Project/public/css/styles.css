@@ -88,6 +88,10 @@ body {
 	margin: 3px;
 }
 
+.tracker-page label {
+	margin-right: 10px;
+}
+
 #formSubmit, #downloadTemplate {
 	border-radius: 10px;
 	background-color: #FFA9FF;
