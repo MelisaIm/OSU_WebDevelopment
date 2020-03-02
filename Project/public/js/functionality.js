@@ -1,3 +1,5 @@
+let domtoimage = require('dom-to-image');
+
 let navItem = window.location.pathname;
 console.log(navItem);
 
@@ -11,7 +13,7 @@ for (let i = 1; i <= 31; i++) {
 	option.value = i;
 }
 
-document.getElementById("generatedTracker").contentWindow.document.body.innerHTML = "<h1>Let's track it</h1>"
+document.getElementById("generatedTracker").contentWindow.document.body.innerHTML = "<h1>༼ノ◕ヮ◕༽ノ︵┻━┻ Let's track habits</h1>"
 
 document.getElementById("tracker-form").addEventListener("submit", (e) => {
 	e.preventDefault();
@@ -31,4 +33,18 @@ document.getElementById("tracker-form").addEventListener("submit", (e) => {
 	}
 	iframe.contentWindow.document.head.appendChild(cssLink);
 	iframe.contentWindow.document.body.insertAdjacentHTML('beforeend', `<div>${label}:</div> <table><tr>${dayLabels}</tr><tr>${boxes}</tr></table>`);
+});
+
+document.getElementById("downloadTemplate").addEventListener('click', () => {
+	let template = document.getElementById("generatedTracker").contentWindow.document.body;
+	domtoimage.toPng(template)
+    .then(function (dataUrl) {
+		var link = document.createElement('a');
+        link.download = 'JournalleyHabitTracker.jpeg';
+        link.href = dataUrl;
+		link.click();
+    })
+    .catch(function (error) {
+        console.error('oops, something went wrong!', error);
+    });
 });

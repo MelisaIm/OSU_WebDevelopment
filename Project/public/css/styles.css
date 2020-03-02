@@ -60,6 +60,9 @@ body {
 
 .templates-container {
 	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	overflow: auto;
 }
 
 .templates-page .downloadable-template {
@@ -73,3 +76,19 @@ body {
 }
 
 /* Tracker Print Page*/
+
+.tracker-page form {
+	margin: 10px;
+	border: 3px solid #FFA9FF;
+	padding: 10px;
+	width: 400px;
+}
+
+.tracker-page input {
+	margin: 3px;
+}
+
+#formSubmit, #downloadTemplate {
+	border-radius: 10px;
+	background-color: #FFA9FF;
+}
