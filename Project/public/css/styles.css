@@ -1,0 +1,75 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.container-fluid {
+	flex: 1 0 auto;
+	margin-bottom: 10px;
+	align-items: center;
+}
+
+.navbar {
+	background-color: #A9FFFF;
+	margin-bottom: 30px;
+}
+
+.page-footer {
+	background-color: #FFA9FF;
+	flex-shrink: 0;
+}
+
+/* How to Page */
+
+.how-to {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.how-to span {
+	font-size: 20px;
+}
+
+.how-to ul {
+	list-style: none;
+	margin-top: 20px;
+}
+
+.how-to li:before {    
+    font-family: 'FontAwesome';
+    content: '\f118';
+    margin:0 5px 0 -15px;
+}
+
+/* Templates Download Page */
+
+.templates-page h1 {
+	margin-bottom: 20px;
+}
+
+.templates-page img {
+	height: 300px;
+	width: 200px;
+	margin-right: 20px;
+}
+
+.templates-container {
+	display: flex;
+}
+
+.templates-page .downloadable-template {
+	display:flex;
+	flex-flow: column;
+	width: 300px;
+}
+
+.downloadable-template span {
+	font-size: small;
+}
+
+/* Tracker Print Page*/
