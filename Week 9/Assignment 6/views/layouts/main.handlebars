@@ -5,5 +5,95 @@
 	</head>
 	<body>
 		{{{body}}}
+	<script>
+		const MONTHS = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+		const form = document.getElementById("exercise-form");
+		const date = new Date()
+		for (let i = 1; i <= 31; i++) {
+		let select = document.getElementById("day");
+		let option = document.createElement("option");
+		select.options.add(option);
+		if (i == date.getDate()) {
+			option.selected = true;
+		}
+		option.text = i;
+		option.value = i;}
+		for (let i = 0; i < MONTHS.length; i++) {
+			let select = document.getElementById("month");
+			let option = document.createElement("option");
+			select.options.add(option);
+			if (i === date.getMonth()) {
+				option.selected = true;
+			}
+			option.text = MONTHS[i];
+			option.value = i;
+		}
+		for (let i = date.getFullYear(); i >= 1980; i--) {
+			let select = document.getElementById("year");
+			let option = document.createElement("option");
+			select.options.add(option);
+			option.text = i;
+			option.value = i;
+		}
+
+		document.getElementById('formSubmit').addEventListener('click', function(event){
+			let name = document.getElementsByName('name')[0].value;
+			let reps = document.getElementsByName('reps')[0].value;
+			let weight = document.getElementsByName('weight')[0].value;
+			let unit = document.getElementById('unit').value;
+			let day = document.getElementById('day').value;
+			let month = document.getElementById('month').value;
+			let year = document.getElementById('year').value;
+
+			data = {name, reps, weight, unit, day, month, year};
+			var req = new XMLHttpRequest();
+			req.open('POST', `/`, true);
+			req.setRequestHeader('Content-Type', 'application/json');
+			req.send(JSON.stringify(data));
+			event.preventDefault();
+	});
+
+	function deleteRow(tableID, currentRow) {
+    try {
+        var table = document.getElementById(tableID);
+        var rowCount = table.rows.length;
+        for (var i = 0; i < rowCount; i++) {
+            var row = table.rows[i];
+            if (row==currentRow.parentNode.parentNode) {
+                table.deleteRow(i);
+                rowCount--;
+                i--;
+            }
+        }
+    } catch (e) {
+		console.log(e);
+    }
+	data = {event: 'delete', id: currentRow.id};
+	var req = new XMLHttpRequest();
+	req.open('POST', `/`, true);
+	req.setRequestHeader('Content-Type', 'application/json');
+	req.send(JSON.stringify(data));
+	event.preventDefault();
+	}
+
+	function editRow(tableID, currentRow, num) {
+		console.log()
+		let name = document.getElementsByName('name1')[num].value;
+		let reps = document.getElementsByName('reps1')[num].value;
+		let weight = document.getElementsByName('weight1')[num].value;
+		let unit = document.getElementsByName('unit1')[num].value;
+		let day = document.getElementsByName('day1')[num].value;
+		let month = document.getElementsByName('month1')[num].value;
+		let year = document.getElementsByName('year1')[num].value;
+
+		let data = {event:"edit", name, reps, weight, unit, day, month, year, id: currentRow.id};
+	 	var req = new XMLHttpRequest();
+	 	req.open('POST', `/`, true);
+	 	req.setRequestHeader('Content-Type', 'application/json');
+	 	req.send(JSON.stringify(data));
+		event.preventDefault();
+	}
+	
+	</script>
 	</body>
 </html>

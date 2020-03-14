@@ -1,2 +1,49 @@
-<h1>Results: </h1>
-<p>{{results}}</p>
+<h1>My Workout Tracker</h1>
+<div class="content">
+	<h3>Let's add an exercise</h3>
+	<form id="exercise-form">
+		<label>Name: </label><input type="text" name="name" placeholder="Name of exercise" required><br>
+		<label>Reps: </label><input type="text" name="reps" placeholder="Number of reps" required><br>
+		<label>Weight: </label><input type="text" name="weight" placeholder="Weight" required><br>
+		<label>Unit: </label><select id="unit"><option value="lbs">lbs</option><option value="kg">kg</option></select>
+		<label>Date: </label>
+		<select id="day">
+		</select>
+		<select id="month">
+		</select>
+		<select id="year">
+		</select>
+		<input id="formSubmit" type="submit" value="Add exercise">
+	</form>
+</div>
+	<table id="resultTable">
+		<tr>
+			<th style="display:none;">
+				Id
+			</th>
+			<th>
+				Exercise
+			</th>
+			<th>
+				# of reps
+			</th>
+			<th>Weight</th>
+			<th>Units</th>
+			<th>Date</th>
+		</tr>
+		{{#each results}}
+		<tr>
+			<td style="display:none;">{{this.id}}</td>
+			<td><input type="text" name="name1" value={{this.name}} required></td>
+			<td><input type="text" name="reps1" value={{this.reps}} required></td>
+			<td><input type="text" name="weight1" value={{this.weight}} required></td>
+			<td><input type="text" name="unit1" value={{this.unit}} required/></td>
+			<td><input type="text" name="day1" value={{this.day}} required>
+			<input type="text" name="month1" value={{this.month}} required>
+			<input type="text" name="year1" value={{this.year}} required>
+			</td>
+			<td><button id={{this.id}} class="deleteAction" onclick="deleteRow('resultTable',this)">Delete</button></td>
+			<td><button id={{this.id}} class="editAction" onclick="editRow('resultTable',this, {{this.number}})">Edit</button></td>
+		</tr>
+		{{/each}}
+	</table>
